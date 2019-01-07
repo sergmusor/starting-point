@@ -6,7 +6,8 @@ before_script:
 - pwd
 - pushd /usr/src/gtest
 - pwd
-- sudo cmake .
+- cmake .
+# - sudo cmake .
 - sudo cmake --build . --target install -- -j "`nproc`"
 - pwd
 - popd
