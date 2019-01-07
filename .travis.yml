@@ -3,9 +3,9 @@ dist: xenial
 before_script:
 script:
 - cmake .
-- cmake --build .
-- cmake --build . --target test
-- cmake --build . --target package
+- cmake --build . -- -j "`nproc`"
+- cmake --build . --target test -- -j "`nproc`"
+- cmake --build . --target package -- -j "`nproc`"
 deploy:
   provider: script
   skip_cleanup: true
