@@ -1,0 +1,14 @@
+language: cpp
+dist: xenial
+before_script:
+script:
+- cmake .
+- cmake --build .
+- cmake --build . --target test
+- cmake --build . --target package
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+  - curl -T origin-lib_0.0."$TRAVIS_BUILD_NUMBER"_amd64.deb -u sergmusor:"$BINTRAY_API_KEY" "https://api.bintray.com/content/sergmusor/starting-point/origin/0.0.$TRAVIS_BUILD_NUMBER/pool/main/h/origin/origin-lib_0.0.$TRAVIS_BUILD_NUMBER_amd64.deb;deb_distribution=xenial;deb_component=main;deb_architecture=amd64;publish=1"
+  - curl -T origin-prog_0.0."$TRAVIS_BUILD_NUMBER"_amd64.deb -u sergmusor:"$BINTRAY_API_KEY" "https://api.bintray.com/content/sergmusor/starting-point/origin/0.0.$TRAVIS_BUILD_NUMBER/pool/main/h/origin/origin-prog_0.0.$TRAVIS_BUILD_NUMBER_amd64.deb;deb_distribution=xenial;deb_component=main;deb_architecture=amd64;publish=1"
