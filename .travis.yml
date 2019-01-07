@@ -1,6 +1,8 @@
 language: cpp
 dist: xenial
 before_script:
+- sudo apt-add-repository -y "deb http://archive.ubuntu.com/ubuntu xenial main universe"
+- sudo apt-get install -y libgtest-dev
 script:
 - cmake .
 - cmake --build . -- -j "`nproc`"
