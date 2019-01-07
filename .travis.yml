@@ -5,6 +5,7 @@ before_script:
 - sudo apt-get install -y libgtest-dev build-essential cmake
 - pushd /usr/src/gtest
 - sudo cmake .
+- cat Makefile
 - sudo cmake --build . -- -j "`nproc`"
 - popd
 script:
