@@ -88,7 +88,7 @@ foreach (_variableName ${_variableNames})
 endforeach()
 ]]
 
-set (CMAKE_VERBOSE_MAKEFILE ON)
+set (CMAKE_VERBOSE_MAKEFILE OFF)
 
 # CTest stuff
 add_test (NAME Test-1
