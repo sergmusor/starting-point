@@ -7,7 +7,7 @@ if ("${TRAVIS_BUILD_NUMBER}" STREQUAL "")
 	set (TRAVIS_BUILD_NUMBER "1")
 endif ("${TRAVIS_BUILD_NUMBER}" STREQUAL "")
 
-option (BUILD_TYPE_RELEASE "Is build type Release")
+option (BUILD_TYPE_RELEASE "Is build type Release" ON)
 
 if (BUILD_TYPE_RELEASE)
 	set (CMAKE_BUILD_TYPE "Release")
