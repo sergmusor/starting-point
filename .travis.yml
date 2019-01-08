@@ -4,12 +4,15 @@ before_script:
 - sudo apt-add-repository -y "deb http://archive.ubuntu.com/ubuntu xenial main universe"
 - sudo apt-get install -y libgtest-dev build-essential cmake
 - pushd /usr/src/gtest
+- cat CMakeLists.txt
 - sudo cmake -D CMAKE_INSTALL_PREFIX=/usr/local .
 - cat Makefile
 - sudo cmake --build . -- -j "`nproc`"
 - ls -alF
 - cat cmake_install.cmake
+- sudo find /usr /lib -name libgtest.a
 - sudo cmake -D CMAKE_INSTALL_PREFIX=/usr/local -P cmake_install.cmake
+- sudo find /usr /lib -name libgtest.a
 - sudo cmake --build . --target install -- -j "`nproc`"
 - popd
 script:
