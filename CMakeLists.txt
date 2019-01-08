@@ -58,6 +58,9 @@ target_link_libraries (prog
 	PRIVATE "${GTEST_MAIN_LIBRARY}"
 )
 
+message (STATUS "GTEST_LIBRARY: '${GTEST_LIBRARY}'")
+message (STATUS "GTEST_MAIN_LIBRARY: '${GTEST_MAIN_LIBRARY}'")
+
 target_link_libraries (test1
 	PRIVATE lib
 	PRIVATE "${CMAKE_THREAD_LIBS_INIT}"
