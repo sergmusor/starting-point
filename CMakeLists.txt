@@ -53,18 +53,20 @@ set_target_properties (lib PROPERTIES
 
 target_link_libraries (prog
 	PRIVATE lib
-	PRIVATE "${GTEST_LIBRARY}"
-	PRIVATE "${GTEST_MAIN_LIBRARY}"
 	PRIVATE "${CMAKE_THREAD_LIBS_INIT}"
 )
 
 target_link_libraries (test1
 	PRIVATE lib
+	PRIVATE "${GTEST_LIBRARY}"
+	PRIVATE "${GTEST_MAIN_LIBRARY}"
 	PRIVATE "${CMAKE_THREAD_LIBS_INIT}"
 )
 
 target_link_libraries (test2
 	PRIVATE lib
+	PRIVATE "${GTEST_LIBRARY}"
+	PRIVATE "${GTEST_MAIN_LIBRARY}"
 	PRIVATE "${CMAKE_THREAD_LIBS_INIT}"
 )
 
