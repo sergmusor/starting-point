@@ -20,6 +20,7 @@ endif (BUILD_TYPE_RELEASE)
 # Project stuff
 project (origin VERSION 0.0.${TRAVIS_BUILD_NUMBER})
 
+find_package (GTest REQUIRED)
 find_package (Threads REQUIRED)
 
 configure_file (version.hpp.in version.hpp)
@@ -53,6 +54,8 @@ set_target_properties (lib PROPERTIES
 target_link_libraries (prog
 	PRIVATE lib
 	PRIVATE "${CMAKE_THREAD_LIBS_INIT}"
+	PRIVATE "${GTEST_LIBRARY}"
+	PRIVATE "${GTEST_MAIN_LIBRARY}"
 )
 
 target_link_libraries (test1
