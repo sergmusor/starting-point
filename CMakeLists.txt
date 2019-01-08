@@ -58,10 +58,6 @@ target_link_libraries (prog
 	PRIVATE "${CMAKE_THREAD_LIBS_INIT}"
 )
 
-message (STATUS "CMAKE_THREAD_LIBS_INIT: '${CMAKE_THREAD_LIBS_INIT}'")
-message (STATUS "GTEST_LIBRARY: '${GTEST_LIBRARY}'")
-message (STATUS "GTEST_MAIN_LIBRARY: '${GTEST_MAIN_LIBRARY}'")
-
 target_link_libraries (test1
 	PRIVATE lib
 	PRIVATE "${CMAKE_THREAD_LIBS_INIT}"
@@ -95,7 +91,7 @@ foreach (_variableName ${_variableNames})
 endforeach()
 ]]
 
-set (CMAKE_VERBOSE_MAKEFILE ON)
+set (CMAKE_VERBOSE_MAKEFILE OFF)
 
 # CTest stuff
 add_test (NAME Test-1
