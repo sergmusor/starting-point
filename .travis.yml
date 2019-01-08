@@ -8,6 +8,7 @@ before_script:
 - cat Makefile
 - sudo cmake --build . -- -j "`nproc`"
 - ls -alF
+- cat cmake_install.cmake
 - sudo cmake --build . --target install -- -j "`nproc`"
 - popd
 script:
