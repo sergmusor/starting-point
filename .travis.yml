@@ -9,7 +9,7 @@ before_script:
 - sudo cp *.a /usr/lib
 - popd
 script:
-- cmake .
+- cmake -D BUILD_TYPE_RELEASE=ON .
 - cmake --build . -- -j "`nproc`"
 - cmake --build . --target test -- -j "`nproc`"
 - cmake --build . --target package -- -j "`nproc`"
